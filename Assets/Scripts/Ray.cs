@@ -3,16 +3,9 @@ using UnityEngine;
 public class RaycastsController : MonoBehaviour
 {
     private float distancia = 100f;
-
-    private LineRenderer linha;
-
     void Start()
     {
-        linha = GetComponent<LineRenderer>();
 
-        linha.startWidth = 0.02f;
-        linha.endWidth = 0.02f;
-        linha.positionCount = 0;
     }
 
     void Update()
