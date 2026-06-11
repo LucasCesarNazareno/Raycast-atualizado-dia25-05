@@ -17,7 +17,9 @@ public class RaycastsController : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(origem, direcao, out hit, distancia))
+            Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(raio, out hit, distancia))
             {
                 if (hit.collider.CompareTag("alvo"))
                 {
@@ -47,7 +49,9 @@ public class RaycastsController : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(origem, direcao, out hit, distancia))
+            Ray raio = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+
+            if (Physics.Raycast(raio, out hit, distancia))
             {
                 Renderer objeto = hit.collider.GetComponent<Renderer>();
 
